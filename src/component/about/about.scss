@@ -1,0 +1,69 @@
+.page_about{
+  .about_section{width: 100%; height: 100vh; position: relative; overflow: hidden;
+    .about_bg{width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #000;
+      &::after{content: ''; display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-image: url(https://hummman.com/mucl/front_img/noise1.6534f57c.gif); opacity: 0.1;}
+    }
+    h1{font-family: 'Apercu Mono Pro'; font-size: 128px; line-height: 1.1; font-weight: 500; position: absolute; left: 56px; top: 49%; transform: translateY(-50%); color: #fff; z-index: 2; mix-blend-mode: difference; opacity: 0; transition: ease 0.3s opacity;
+      &.active{opacity: 1;}
+    }
+    
+    
+    .about_flex{display: grid; /*repeat(3, minmax(0, 1fr))*/grid-template-columns: 4fr 3fr 3fr;; width: 100%; height: 100%; position: relative; z-index: 1; gap: calc(100% / 12); padding: 0 56px;
+      .about_el{width: 100%; position: relative;
+        img{width: 100%; opacity: 0; transition: ease 0.7s opacity; transition-delay: 0.0s;
+          &.img_1{width: calc((100% / 4) * 2.5); bottom: 50%; position: absolute; left: 0;}
+          &.img_2{width: calc((100% / 4) * 3); top: 64.375%; position: absolute; right: 0;}
+          &.img_3{width: 100%; position: absolute; top: 50%;}
+          &.img_4{width: 100%; position: absolute; top: 80px;}
+          &.img_5{width: 100%; position: absolute; bottom: 32px;}
+
+          &.show{opacity: 1; transition-delay: 1s;}
+        }
+        .txt_w{position: absolute; font-size: 0.94vw; mix-blend-mode: difference; width: 100%;
+          .inner{}
+          .bold{font-weight: bold; line-height: 1.3; color: #e5ff70; margin-bottom: 16px; display: block; font-family: 'Helvetica Now Display'; text-transform: uppercase;
+            .line:nth-child(1) .inner{transition-delay: 0.1s;}
+            .line:nth-child(2) .inner{transition-delay: 0.2s;}
+          }
+          .regular{font-weight: 400;  line-height: 1.3; color: #fff; font-family: 'Helvetica Now Display';
+            .line:nth-child(1) .inner{transition-delay: 0.3s;}
+            .line:nth-child(2) .inner{transition-delay: 0.4s;}
+            .line:nth-child(3) .inner{transition-delay: 0.5s;}
+            .line:nth-child(4) .inner{transition-delay: 0.6s;}
+            .line:nth-child(5) .inner{transition-delay: 0.7s;}
+          }
+          &.txt_w_1{top: calc(50% - 70px); transform: translateY(-100%);}
+          &.txt_w_2{bottom: 15vw;}
+        }
+      }
+      /*.about_el_1{grid-column: span 4;}
+      .about_el_2{grid-column: span 3;}
+      .about_el_3{grid-column: span 4;}*/
+    }
+  }
+  
+  @media (max-width:1024px){
+    .about_section{height: unset; min-height: 100vh;
+      h1{left: 50%; transform: translate(-50%, 0%); font-size: 6.25vw; top: 11.72vw;}
+      .about_flex{display: flex; flex-direction: column; padding: 0 16px 0 0; gap: 0;
+
+        .about_el{
+          img{position: relative; display: block; box-sizing: unset;
+            &.img_1{width: 50%; bottom: unset; left: 0; position: relative; margin-bottom: 3.32vw; margin-left: 50%; margin-top: 3.91vw;}
+            &.img_2{width: calc((100% / 8) * 3); top: unset; right: unset; position: relative; margin-bottom: 6.35vw;}
+            &.img_3{width: calc((100% / 8) * 3); top: unset; position: relative; margin-bottom: 1.46vw; margin-left: 50%;}
+            &.img_4{width: 50%; top: unset; position: relative; margin-bottom: 1.95vw;}
+            &.img_5{width: calc((100% / 8) * 3); bottom: unset; position: relative; margin-bottom: 40px; margin-left: calc((100% / 8) * 5);}
+          }
+          .txt_w{position: absolute; font-size: 2.777vw; mix-blend-mode: difference;
+            .inner{}
+            .bold{margin-bottom: 0.78vw;}
+            &.txt_w_1{top: 23.63vw; width: calc((100vw / 8) * 5); left: calc((100% / 8) * 1); bottom: calc(100% + 1.95vw); transform: unset; top: unset;}
+            &.txt_w_2{top: 8.59vw; width: calc((100vw / 8) * 4); left: calc((100% / 8) * 3);}
+          }
+        }
+      }
+    }
+  }
+
+}
