@@ -425,7 +425,7 @@ useLayoutEffect(() => {
                   />
                   <img src={item.title_img}/>
                 </div>*/}
-                <div className="wm_video_w">
+                <div className="wm_video_w cursor_video">
                   <video
                     ref={(el) => (videoRefs.current[i] = el)}
                     playsInline
@@ -434,6 +434,25 @@ useLayoutEffect(() => {
                     loop
                     preload="metadata"
                     src={item.title_video}
+                    onPointerUp={(e) => {
+                      e.stopPropagation();
+                      const video = e.currentTarget;
+                      const wrap = video.closest('.wm_video_w');
+                      const cursor = document.querySelector('.cursor');
+
+                      if (video.paused) {
+                        video.play();
+                        video.classList.add('cursor_txt_close');
+                        wrap?.classList.add('btn_close');
+                        cursor?.classList.add('cursor_txt_close');
+                      } else {
+                        video.pause();
+                        video.classList.remove('cursor_txt_close');
+                        wrap?.classList.remove('btn_close');
+                        cursor?.classList.remove('cursor_txt_close');
+                      }
+                      
+                    }}
                   />
 
                   <img src={item.title_img} />

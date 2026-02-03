@@ -270,9 +270,9 @@
     }
   }
   .footer_on .logo_fixed{opacity: 1; position: absolute;}
-  .page_main .section_3 .float-wrap_list .float-el{top: 60vh; transform: translateY(0);}
-  .page_main .section_3 .float-wrap_list .float-el.floating{top: 60vh; bottom: unset;  transform: translateY(0);}
-  .page_main .section_3 .float-wrap_list .float-el.float-bottom{top: unset; bottom: 40vh; transform: translateY(100%);}
+  .page_main .section_3 .float-wrap_list .float-el{top: 50vh; transform: translateY(0);}
+  .page_main .section_3 .float-wrap_list .float-el.floating{top: 50vh; bottom: unset;  transform: translateY(0);}
+  .page_main .section_3 .float-wrap_list .float-el.float-bottom{top: unset; bottom: 50vh; transform: translateY(100%);}
 }
 @media(max-width:1024px){
   .page_main{
